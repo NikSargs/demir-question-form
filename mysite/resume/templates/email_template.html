@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style type="text/css">
+    body {
+          font-family: "Arial", serif;
+          font-style: italic;
+          font-weight: 200;
+          font-size: 20px;
+    }
+    h1#title{
+          text-align: center;
+
+    }
+
+    p.name{
+          border-bottom: 1px solid black; /* Параметры линии под текстом */
+          font-weight: normal; /* Убираем жирное начертание */
+          padding-bottom: 3px; /* Расстояние от текста до линии */
+   }
+
+
+    </style>
+
+
+</head>
+<body>
+  <form>
+      <h1 id="title">
+        АНКЕТА КАНДИТА
+    </h1>
+      <p>Дата заполнения:</p>
+      <p class="name">{{filling_date}}</p>
+      <p>Фамилия:</p>
+      <p class="name">{{last_name}}</p>
+      <p>Имя:</p>
+      <p class="name">{{name}}</p>
+      <p>Отчество:</p>
+      <p class="name">{{second_name}}</p>
+      <p>Дата рождения:</p>
+      <p class="name">{{birthdate}}</p>
+      <p>Национальность:</p>
+      <p class="name">{{nationality}}</p>
+      <p>Адрес (по прописке / фактическое место проживания):</p>
+      <p class="name">{{address_resume}}</p>
+      <p>Телефон (для контакта):</p>
+      <p class="name">{{phone_resume}}</p>
+      <p>Военная обязанность:</p>
+      <p class="name">{{army_resume}}</p>
+      <p>Водительские права (категория / стаж вождения):</p>
+      <p class="name">{{licence}}</p>
+      <p>Водительские права (категория / стаж вождения):</p>
+      <p class="name">{{licence}}</p>
+      <p>ФИО, место работы мужа / жены:</p>
+      <p class="name">{{spouse_info}}</p>
+      <hr>
+      <h3>Члены семьи (ФИО, место работы, номер телефона)</h3>
+      <p>Отец:</p>
+      <p class="name">{{father_info}}</p>
+      <p>Мать:</p>
+      <p class="name">{{mother_info}}</p>
+      <p>Сестры:</p>
+      <p class="name">{{sisters_info}}</p>
+      <p>Братья:</p>
+      <p class="name">{{brothers_info}}</p>
+      <hr>
+      <h2>Образование (Название / Годы обучения / Специализация / Степень)</h2>
+      <p>- Незаконченное среднее образование:</p>
+      <p class="name">{{incomplete_secondary_education}}</p>
+      <p>- Среднее образование:</p>
+      <p class="name">{{secondary_education}}</p>
+      <p>- Средне-специальное образование:</p>
+      <p class="name">{{vocational_education}}</p>
+      <p>- Высшее образование:</p>
+      <p class="name">{{high_education}}</p>
+      <p>- Магистерская степень:</p>
+      <p class="name">{{master_degree}}</p>
+      <p>- Докторская степень:</p>
+      <p class="name">{{doctor_degree}}</p>
+      <hr>
+      <h2>Знание языков: устно / письменно</h2>
+      <p>Английский:</p>
+      <p class="name">{{en_lang}}</p>
+      <p>Русский:</p>
+      <p class="name">{{ru_lang}}</p>
+      <p>Кыргызский:</p>
+      <p class="name">{{kg_lang}}</p>
+      <p>Другие:</p>
+      <p class="name">{{different_lang}}</p>
+      <p>Дата заполнения:</p>
+      <p class="name">{{filling_date}}</p>
+      <hr>
+      <h2>ТРУДОВАЯ ДЕЯТЕЛЬНОСТЬ (начиная с последнего места работы)</h2>
+      <p>Название организации:</p>
+      <p class="name">{{orgname}}</p>
+      <hr>
+      <p>Укажите данные 3-х лиц, которые могут дать вам рекомендацию (Организация /
+                    Должность / Телефон):</p>
+      <p class="name">{{recommendation}}</p>
+      <p>Есть ли у вас родственники в ДКИБ:</p>
+      <p class="name">{{left_cause}}</p>
+      <hr>
+      <h2>Укажите имена лиц, которые являются вашими родственниками перечисленных
+                    ниже организациях:</h2>
+      <p>Банки и финансовые организации Кыргызстана:
+                        Имя / Название банка / Должность / Родство / Tелефон</p>
+      <p class="name">{{relatives_in_banks}}</p>
+      <p>Правительственные и другие государственные учреждения:
+                        Имя / Название организации / Должность / Родство / Tелефон</p>
+      <p class="name">{{relatives_in_gov_institutions}}</p>
+      <hr>
+      <p>Укажите дату, с которой вы сможете начать работу в
+                    ДКИБ</p>
+      <p class="name">{{beginning_of_the_work}}</p>
+      <p>Из какого источника вы узнали о наличии вакансии на эту должность?</p>
+      <p class="name">{{info_about_work}}</p>
+      <p>Каковы ваши ожидания по заработной плате (оклад до вычета налогов) в
+                    сомах?:</p>
+      <p class="name">{{wage}}</p>
+  </form>
+
+
+</body>
+</html>
