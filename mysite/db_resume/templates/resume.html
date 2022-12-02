@@ -1,0 +1,230 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Анкета кандидата</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+    <h1 id="title">
+        АНКЕТА КАНДИТА
+    </h1>
+    <form action="{% url 'send-resume' %}" method="post" id="form">
+        {% csrf_token %}
+        <div class="form-control">
+            <img src="{% static 'images/db_logo.jpeg' %}">
+            <div class="form-control">
+                <label>Дата Заполнения:</label>
+                <p><input type="date" id="filling" name="filling_date" required></p>
+
+
+                <label>Фамилия:</label>
+                <p><input type="text" id="lastname" name="last_name" required></p>
+
+
+                <label>Имя:</label>
+                <p><input type="text" id="name" name="name" required></p>
+
+
+                <label>Отчество:</label>
+                <p><input type="text" id="secondname" name="second_name" required></p>
+
+
+                <label>Дата Рождения:</label>
+                <p><input type="date" id="birthdate" name="birthdate" required></p>
+
+
+                <label>Место Рождения:</label>
+                <p><input type="text" id="birthplace" name="birthplace" required></p>
+
+
+                <label>Национальность:</label>
+                <p><input type="text" id="nationality" name="nationality" required></p>
+
+                <label>Пол:</label>
+                <p><input type="radio" id="sex1" name="sex_resume" value="Муж." required> Муж.</p>
+                <p><input type="radio" id="sex2" name="sex_resume" value="Жен."> Жен.</p>
+
+
+                <label>Адрес (по прописке / фактическое место проживания):</label>
+                <p><input type="text" id="address" name="address_resume" required></p>
+
+                <label>Телефон (для контакта):</label>
+                <p><input type="text" id="phone" name="phone_resume" required></p>
+
+                <label>Военная обязанность:</label>
+                <p><input type="radio" id="army1" name="army_resume" value="Есть" required> Есть</p>
+                <p><input type="radio" id="army2" name="army_resume" value="Нет"> Нет</p>
+
+                <label>Водительские права (категория / стаж вождения):</label>
+                <p><input type="text" id="licence" name="licence" required></p>
+
+
+                <label>ФИО, место работы мужа / жены:
+                </label>
+                <p><input type="text" id="spouceinfo" name="spouce_info"></p>
+
+                <label>ФИ Детей:</label>
+                <p><input type="text" id="childreninfo" name="children_info"></p>
+            </div>
+            <hr>
+            <div class="form-control">
+                <label><b>Члены семьи (ФИО, место работы, номер телефона):</b></label>
+                <div class="form-control">
+                    <label>Отец:</label>
+                    <p><input type="text" id="fatherinfo" name="father_info"></p>
+
+                    <label>Мать:</label>
+                    <p><input type="text" id="motherinfo" name="mother_info"></p>
+
+                    <label>Сестры:</label>
+                    <p><input type="text" id="sistersinfo" name="sisters_info"></p>
+
+                    <label>Братья:</label>
+                    <p><input type="text" id="brothersinfo" name="brothers_info"></p>
+                </div>
+            </div>
+            <hr>
+            <div class="form-control">
+                <label><b>Образование (Название / Годы обучения / Специализация / Степень)</b></label>
+                <div class="form-control">
+                    <label>- Незаконченное среднее образование:</label>
+                    <p><input type="text" id="incomplseced" name="incomplete_secondary_education"></p>
+
+                    <label>- Среднее образование:</label>
+                    <p><input type="text" id="seced" name="secondary_education" ></p>
+
+                    <label>- Средне-специальное образование:</label>
+                    <p><input type="text" id="voced" name="vocational_education" ></p>
+
+                    <label>- Высшее образование:</label>
+                    <p><input type="text" id="highed" name="high_education" ></p>
+
+                    <label>- Магистерская степень:</label>
+                    <p><input type="text" id="master" name="master_degree"></p>
+
+                    <label>- Докторская степень:</label>
+                    <p><input type="text" id="doctor" name="doctor_degree"></p>
+                </div>
+            </div>
+            <hr>
+            <div class="form-control">
+                <label><b>Знание языков: устно / письменно </b></label>
+                <div class="form-control">
+                    <p>
+                        <label>Английский:</label>
+                        <input type="radio" id="enlang1" name="en_lang" value="Отлично" required> Отлично
+                        <input type="radio" id="enlang2" name="en_lang" value="Хорошо"> Хорошо
+                        <input type="radio" id="enlang3" name="en_lang" value="Плохо"> Плохо
+                    </p>
+                    <p>
+                        <label>Русский:</label>
+                        <input type="radio" id="rulang1" name="ru_lang" value="Отлично" required> Отлично
+                        <input type="radio" id="rulang2" name="ru_lang" value="Хорошо"> Хорошо
+                        <input type="radio" id="rulang3" name="ru_lang" value="Плохо"> Плохо
+                    </p>
+                    <p>
+                        <label>Кыргызский:</label>
+                        <input type="radio" id="kglang1" name="kg_lang" value="Отлично" required> Отлично
+                        <input type="radio" id="kglang2" name="kg_lang" value="Хорошо"> Хорошо
+                        <input type="radio" id="kglang3" name="kg_lang" value="Плохо"> Плохо
+                    </p>
+                    <label>Другие:</label>
+                    <p>
+                        <input type="text" id="different" name="different_lang">
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="form-control">
+                <label><b>ТРУДОВАЯ ДЕЯТЕЛЬНОСТЬ (начиная с последнего места работы):</b></label>
+                <div class="form-control">
+
+                    <label>Название организации:</label>
+                    <p><input type="text" id="orgname" name="orgname"></p>
+
+                    <label>Должность:</label>
+                    <p><input type="text" id="post" name="post"></p>
+
+
+                    <label>Период работы:</label>
+                    <p><textarea id="period" name="work_period"></textarea></p>
+
+
+                    <label>Причина ухода:</label>
+                    <p><textarea id="cause" name="left_cause"></textarea></p>
+                </div>
+            </div>
+            <hr>
+            <div class="form-control">
+                <p><b>Укажите данные 3-х лиц, которые могут дать вам рекомендацию (Организация /
+                    Должность / Телефон)</b></p>
+                <p><textarea id="recommendation" name="recommendation"></textarea></p>
+            </div>
+            <hr>
+            <div class="form-control">
+                <label><b>Есть ли у вас родственники в ДКИБ:</b></label>
+                <p><textarea id="dbrelatives" name="relatives_in_db"></textarea></p>
+            </div>
+            <hr>
+            <div class="form-control">
+                <p><b>Укажите имена лиц, которые являются вашими родственниками перечисленных
+                    ниже организациях:</b></p>
+                <div>
+                    <label>Банки и финансовые организации Кыргызстана:
+                        Имя / Название банка / Должность / Родство / Tелефон</label>
+                    <p><textarea id="bankrelatives" name="relatives_in_banks"></textarea></p>
+                </div>
+                <div>
+                    <label>Правительственные и другие государственные учреждения:
+                        Имя / Название организации / Должность / Родство / Tелефон</label>
+                    <p><textarea id="govrelatives" name="relatives_in_gov_institutions"></textarea></p>
+                </div>
+            </div>
+            <hr>
+            <div class="form-control">
+                <div class="form-control">
+                    <label><b>Укажите дату, с которой вы сможете начать работу в
+                    ДКИБ</b></label>
+                    <p><input type="date" id="workdate" name="beginning_of_the_work" required></p>
+                    <hr>
+                    <label><b>Из какого источника вы узнали о наличии вакансии на эту должность?</b></label>
+                    <p><textarea id="workinfo" name="info_about_work" required></textarea></p>
+                </div>
+            </div>
+            <hr>
+            <div class="form-control">
+                <label><b>Каковы ваши ожидания по заработной плате (оклад до вычета налогов) в
+                    сомах?</b></label>
+                <p><input type="text" id="wage" name="wage" required></p>
+            </div>
+            <br>
+            <div class="form-control">
+                <input type="checkbox" required name="terms">  Настоящим подтверждаю,
+                    что сведения указанные выше предоставлены
+                    мной добровольно, могут храниться, обрабатываться и использоваться ДКИБ для
+                    защиты своих интересов в рамках осуществления своей деятельности в
+                    соответствии с законодательством Кыргызской Республики. Также даю согласие
+                    хранение обработку и использование персональных данных о своих близких
+                    родственниках в целях предотвращения конфликта интересов в ДКИБ, с
+                    последующей их обработкой, хранением и распространением, в соответствии с
+                    законодательством Кыргызской Республики. Настоящим даю согласие на получение
+                    информации обо мне у лиц, указанных в настоящей анкете, а также из любых иных
+                    источников в соответствии с законодательством Кыргызской Республики
+
+
+            </div>
+            <div class="form-control">
+                <button type="submit" value="Send">Отправить</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

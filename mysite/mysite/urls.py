@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('pdf/', download_my_pdf, name="pdfgen"),
     path('resume/', include('resume.urls')),
+    path('db_resume/', include('db_resume.urls')),
 
 ]

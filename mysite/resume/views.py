@@ -1,17 +1,9 @@
 import tempfile
-
-import weasyprint
 from django.shortcuts import render
-from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
-from weasyprint import HTML, CSS, html
-from django.template.loader import render_to_string
-from django.shortcuts import HttpResponse
-from PIL import Image
+from weasyprint import HTML, CSS
 from django.core.mail import EmailMultiAlternatives
-
 from django.template.loader import render_to_string
-from django.utils.html import strip_tags
 
 
 def sendmail(request, template="email_template.html"):
@@ -57,11 +49,9 @@ def sendmail(request, template="email_template.html"):
         wage = request.POST.get('wage')
         sender_name = name + ' ' + last_name + ' ' + 'прислал Анкету'
 
-
-
-
         pdf_html = render_to_string(template, locals())
-        pdf_file = HTML(string=pdf_html).write_pdf(stylesheets=[CSS(string='@page { size: letter portrait; margin: 1cm }')])
+        pdf_file = HTML(string=pdf_html).write_pdf(
+            stylesheets=[CSS(string='@page { size: letter portrait; margin: 1cm }')])
 
         temp = tempfile.NamedTemporaryFile()
         temp.write(pdf_file)
